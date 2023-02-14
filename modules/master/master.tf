@@ -2,7 +2,7 @@ resource "aws_eks_cluster" "eks_cluster" {
 
     name = var.cluster_name
     version = var.k8s_version
-    role_arn = aws_iam_role.eks_cluster_role.id
+    role_arn = aws_iam_role.eks_cluster_role.arn
 
     vpc_config {
       security_group_ids = [
@@ -15,7 +15,13 @@ resource "aws_eks_cluster" "eks_cluster" {
       ]
     }
 
+    depends_on = [
+    aws_iam_role_policy_attachment.eks_cluster_policy,
+    aws_iam_role_policy_attachment.eks_service_policy,
+    ]
+
     tags = {
       Name = "${var.cluster_name}"
+      "kubernetes.io/cluster/${var.cluster_name}" = "shared"
     }
 }

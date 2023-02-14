@@ -7,6 +7,7 @@ resource "aws_subnet" "public_subnet_1a" {
 
   tags = {
     Name = "${var.cluster_name}-public-1a"
+    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
   }
 }
 
@@ -19,6 +20,7 @@ resource "aws_subnet" "public_subnet_1c" {
 
   tags = {
     Name = "${var.cluster_name}-public-1c"
+    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
   }
 }
 
