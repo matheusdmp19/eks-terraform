@@ -1,4 +1,3 @@
-# Trocar outputs de recurso inteiro por ID caso seja conveniente
 output "cluster_vpc" {
   value = aws_vpc.cluster_vpc
 }
