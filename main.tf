@@ -5,11 +5,11 @@ terraform {
       version = "4.54.0"
     }
   }
-  backend "s3" {
-    bucket = "matheusdmp19-remote-state"
-    key    = "eks-terraform/terraform.tfstate"
-    region = "us-east-1"
-  }
+  # backend "s3" {
+  #   bucket = "matheusdmp19-remote-state"
+  #   key    = "eks-terraform/terraform.tfstate"
+  #   region = "us-east-1"
+  # }
 }
 
 provider "aws" {
