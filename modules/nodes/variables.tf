@@ -17,3 +17,5 @@ variable "eks_cluster_sg" {}
 variable "nodes_instances_size" {}
 
 variable "auto_scale_options" {}
+
+variable "auto_scale_cpu" {}
