@@ -8,7 +8,7 @@ resource "aws_subnet" "public_subnet_1a" {
   tags = {
     Name = "${var.cluster_name}-public-1a"
     "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-    "kubernetes.io/role/elb"                    = true
+    "kubernetes.io/role/elb"                    = 1
   }
 }
 
@@ -22,7 +22,7 @@ resource "aws_subnet" "public_subnet_1c" {
   tags = {
     Name = "${var.cluster_name}-public-1c"
     "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-    "kubernetes.io/role/elb"                    = true
+    "kubernetes.io/role/elb"                    = 1
   }
 }
 
